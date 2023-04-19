@@ -1,5 +1,11 @@
 #インスタンスメソッド
-class Car                                #- -Carはエクセルのシートみたいなもの
+class Car#- -Carはエクセルのシートみたいなもの
+  def move(direction, distance)
+    self.turn(direction)
+    self.run(distance)
+  end
+  
+  
   def turn(direction)                    #| -　　　　　　　　　-turnというメソッドとdirectionという変数を定義
     puts "#{direction}に曲がります。"    #|  |-ブロック　
   end                                    #| -
@@ -10,10 +16,7 @@ class Car                                #- -Carはエクセルのシートみ�
 end                                      #-
 
 car = Car.new #Carというクラスの中にnewというメソッドで作ったもの（インスタンス）をcarにいれてるイメージ→newで作ったものにcarという名前を付けてる感じ
-car.turn("右")#インスタンス.メソッド（"実引数"）が良く使われるらしい→何を（インスタンス）どんなふうに（引数）どうする（メソッド）みたいな感じ
-
-car = Car.new
-car.run(5)
+car.move("右", 5)
 
 #クラスメソッド
 class Car
